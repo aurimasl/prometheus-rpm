@@ -1,0 +1,12 @@
+# not installed by default as logrotate is used to manage all log files.
+/var/log/hfit.log
+{
+  sharedscripts
+  missingok
+  notifempty
+  rotate 5
+  compress
+  postrotate
+        [ ! -f /var/run/hfit/hfit.pid ] || /etc/init.d/hfit restart
+  endscript
+}
