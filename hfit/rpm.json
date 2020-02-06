@@ -1,0 +1,28 @@
+{
+    "name": "hfit",
+    "version": "0.1.3",
+    "arch": "x86_64",
+    "release": "1",
+    "summary": "Hfit daemon",
+    "group": "System Environment/Daemons",
+    "license": "LICENSE",
+    "url": "http://github.com/aurimasl/hfit",
+    "description": "Hfit",
+    "changelog-cmd": "changelog rpm",
+    "files": [
+        {
+            "from": "build/!arch!/hfit",
+            "to": "%{_bindir}/",
+            "base": "build/!arch!/",
+            "type": ""
+        }
+    ],
+    "preinst": "rpm/preinst.sh",
+    "postinst": "rpm/postinst.sh",
+    "prerm": "rpm/prerm.sh",
+    "postrm": "rpm/postrm.sh",
+    "verify": "rpm/verify.sh",
+    "envs": {
+        "some": "value"
+    }
+}

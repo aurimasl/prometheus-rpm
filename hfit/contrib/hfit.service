@@ -1,0 +1,15 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=Hfit
+Documentation=https://github.com/aurimasl/hfit
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/sysconfig/hfit
+ExecStart=/usr/bin/hfit $ARGS
+Restart=on-failure
+User=root
+
+[Install]
+WantedBy=multi-user.target
